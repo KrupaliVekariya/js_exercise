@@ -1,0 +1,80 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h3>Exercise 1</h3>
+        <input type="text" id="id1" placeholder="Enter anything">
+        <button type="button" onclick="printText()">Click</button>
+        <p id="demo"></p>
+
+        <h3>Exercise 2</h3>
+        <input type="text" id="id2" placeholder="Enter Name"><br><br>
+        <input type="text" id="id3" placeholder="Enter Age"><br><br>
+        <button type="button" onclick="printName()">Click</button><br>
+        <p id="demo2"></p>
+
+        <h3>Exercise 3</h3>
+        <input type="text" id="id7" placeholder="Enter String">
+        <button type="button" onclick="printString()">Click</button>
+        <p id="demo5"></p>
+
+        <h3>Exercise 4</h3>
+        <input type="text" id="id4" placeholder="Enter Name"><br><br>
+        <input type="text" id="id5" placeholder="Enter Age"><br><br>
+        <button type="button" onclick="printArray()">Click</button><br>
+        <p id="demo3"></p>
+
+        <h3>Exercise 5</h3>
+        <input type="text" id="id6" placeholder="Enter Number">
+        <button type="button" onclick="printOddEven()" >Click</button>
+        <p id="demo4"></p>
+        <script>
+             function printText(){
+                var a;
+                a = document.getElementById("id1").value;
+                txt = a.length;
+                document.getElementById("demo").innerHTML= txt;
+            }
+
+            function printName(){
+                var person = {
+                    name : document.getElementById("id2").value,
+                    age : document.getElementById("id3").value
+                };
+                document.getElementById("demo2").innerHTML= "<b>" + person.name +"</b>" + " is " +"<b>" + person.age + "</b>" + " years old.";
+            }
+
+            function printArray(){
+                var a= new Array(document.getElementById("id4").value , document.getElementById("id5").value);
+                document.getElementById("demo3").innerHTML= "<b>" + a[0] +"</b>" + " is " +"<b>" + a[1] + "</b>" + " years old.";
+            }
+
+            function printString(){
+                var a = document.getElementById("id7").value;
+                var txt = a.slice(0,4);
+                document.getElementById("demo5").innerHTML= txt;
+            }
+
+            function printOddEven(){
+                var n = Number(document.getElementById("id6").value);
+                var flag=0;
+                if(n % 2 == 0)
+                {
+                    document.getElementById("demo4").innerHTML=  n + " is Even Number.";
+                    flag=0;
+                }
+                else{
+                    document.getElementById("demo4").innerHTML = n + " is Odd Number.";
+                    flag = 1;
+                }
+                if(flag == 1){
+                    document.getElementById("demo4").style.color = "Red";
+                }
+                else{
+                    document.getElementById("demo4").style.color = "black";
+                }
+            }
+        </script>
+    </body>
+</html>
