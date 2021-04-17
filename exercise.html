@@ -20,8 +20,8 @@
         <p id="demo5"></p>
 
         <h3>Exercise 4</h3>
-        <input type="text" id="txtStringName" placeholder="Enter Name"><br><br>
-        <input type="text" id="txtStringAge" placeholder="Enter Age"><br><br>
+        <input type="text" id="txtStrName" placeholder="Enter Name"><br><br>
+        <input type="text" id="txtStrAge" placeholder="Enter Age"><br><br>
         <button type="button" onclick="printArray()">Click</button><br>
         <p id="demo3"></p>
 
@@ -30,14 +30,14 @@
         <button type="button" onclick="printOddEven()" >Click</button>
         <p id="demo4"></p>
         <script>
-            //Display how many latters in input string...
+            //Display length of string...
              function printText(){
-                var str;
-                str = document.getElementById("txtString").value;
+                var a;
+                a = document.getElementById("txtString").value;
                 txt = a.length;
                 document.getElementById("demo").innerHTML= txt;
             }
-            //Display name and age using obects...
+            // display value of object...
             function printName(){
                 var person = {
                     name : document.getElementById("txtName").value,
@@ -45,28 +45,27 @@
                 };
                 document.getElementById("demo2").innerHTML= "<b>" + person.name +"</b>" + " is " +"<b>" + person.age + "</b>" + " years old.";
             }
-            //Display name and age using array...
+            //display value of array...
             function printArray(){
-                var string= new Array(document.getElementById("txtStringName").value , document.getElementById("txtStringAge").value);
-                document.getElementById("demo3").innerHTML= "<b>" + a[0] +"</b>" + " is " +"<b>" + a[1] + "</b>" + " years old.";
+                var arr= [/* document.getElementById("txtStrName").value , document.getElementById("txtStrAge").value */];
+                arr.push(document.getElementById("txtStrName").value , document.getElementById("txtStrAge").value);
+                var str1=" ",print;
+                for(print in arr){
+                    str1 += arr[print] + "<br>";
+                }
+                  document.getElementById("demo3").innerHTML += str1; 
             }
-            //Display any 4 letter...
-            function printString(){
-                var number = document.getElementById("txtStr").value;
-                var txt = number.slice(0,4);
-                document.getElementById("demo5").innerHTML= txt;
-            }
-            // Display odd or even number..
+            //Display odd or even number...
             function printOddEven(){
-                var num = Number(document.getElementById("txtNumber").value);
+                var n = Number(document.getElementById("txtNumber").value);
                 var flag=0;
                 if(n % 2 == 0)
                 {
-                    document.getElementById("demo4").innerHTML=  n + " is Even Number.";
+                    document.getElementById("demo4").innerHTML +=  n + " is Even Number. <br>";
                     flag=0;
                 }
                 else{
-                    document.getElementById("demo4").innerHTML = n + " is Odd Number.";
+                    document.getElementById("demo4").innerHTML += n + " is Odd Number.<br>";
                     flag = 1;
                 }
                 if(flag == 1){
