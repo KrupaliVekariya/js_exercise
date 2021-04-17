@@ -4,60 +4,61 @@
     </head>
     <body>
         <h3>Exercise 1</h3>
-        <input type="text" id="id1" placeholder="Enter anything">
+        <input type="text" id="txtString" placeholder="Enter anything">
         <button type="button" onclick="printText()">Click</button>
         <p id="demo"></p>
 
         <h3>Exercise 2</h3>
-        <input type="text" id="id2" placeholder="Enter Name"><br><br>
-        <input type="text" id="id3" placeholder="Enter Age"><br><br>
+        <input type="text" id="txtName" placeholder="Enter Name"><br><br>
+        <input type="text" id="txtAge" placeholder="Enter Age"><br><br>
         <button type="button" onclick="printName()">Click</button><br>
         <p id="demo2"></p>
 
         <h3>Exercise 3</h3>
-        <input type="text" id="id7" placeholder="Enter String">
+        <input type="text" id="txtStr" placeholder="Enter String">
         <button type="button" onclick="printString()">Click</button>
         <p id="demo5"></p>
 
         <h3>Exercise 4</h3>
-        <input type="text" id="id4" placeholder="Enter Name"><br><br>
-        <input type="text" id="id5" placeholder="Enter Age"><br><br>
+        <input type="text" id="txtStringName" placeholder="Enter Name"><br><br>
+        <input type="text" id="txtStringAge" placeholder="Enter Age"><br><br>
         <button type="button" onclick="printArray()">Click</button><br>
         <p id="demo3"></p>
 
         <h3>Exercise 5</h3>
-        <input type="text" id="id6" placeholder="Enter Number">
+        <input type="text" id="txtNumber" placeholder="Enter Number">
         <button type="button" onclick="printOddEven()" >Click</button>
         <p id="demo4"></p>
         <script>
+            //Display how many latters in input string...
              function printText(){
-                var a;
-                a = document.getElementById("id1").value;
+                var str;
+                str = document.getElementById("txtString").value;
                 txt = a.length;
                 document.getElementById("demo").innerHTML= txt;
             }
-
+            //Display name and age using obects...
             function printName(){
                 var person = {
-                    name : document.getElementById("id2").value,
-                    age : document.getElementById("id3").value
+                    name : document.getElementById("txtName").value,
+                    age : document.getElementById("txtAge").value
                 };
                 document.getElementById("demo2").innerHTML= "<b>" + person.name +"</b>" + " is " +"<b>" + person.age + "</b>" + " years old.";
             }
-
+            //Display name and age using array...
             function printArray(){
-                var a= new Array(document.getElementById("id4").value , document.getElementById("id5").value);
+                var string= new Array(document.getElementById("txtStringName").value , document.getElementById("txtStringAge").value);
                 document.getElementById("demo3").innerHTML= "<b>" + a[0] +"</b>" + " is " +"<b>" + a[1] + "</b>" + " years old.";
             }
-
+            //Display any 4 letter...
             function printString(){
-                var a = document.getElementById("id7").value;
-                var txt = a.slice(0,4);
+                var number = document.getElementById("txtStr").value;
+                var txt = number.slice(0,4);
                 document.getElementById("demo5").innerHTML= txt;
             }
-
+            // Display odd or even number..
             function printOddEven(){
-                var n = Number(document.getElementById("id6").value);
+                var num = Number(document.getElementById("txtNumber").value);
                 var flag=0;
                 if(n % 2 == 0)
                 {
